@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Saad Ansari - AI/ML Student">
     <title>Saad Ansari | AI & ML Portfolio</title>
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">Saad Ansari</div>
+        <div class="logo">Saad Ansari<span class="dot">.</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
@@ -25,14 +28,18 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h3>Hello, I'm</h3>
+            <span class="greeting">Hello, I'm</span>
             <h1>Saad Ansari</h1>
-            <h2>MSc Artificial Intelligence & Machine Learning Student</h2>
-            <p>Passionate about building AI models, NLP, and solving real-world problems with code.</p>
+            <h2>MSc Artificial Intelligence & Machine Learning</h2>
+            [cite_start]<p>Building intelligent systems with <strong>NLP</strong>, <strong>Deep Learning</strong>, and <strong>Generative AI</strong>[cite: 10]. Passionate about solving real-world problems through code.</p>
+            
             <div class="hero-btns">
-                <a href="#projects" class="btn primary-btn">View My Work</a>
+                <a href="resume.pdf" download class="btn primary-btn">
+                    Download Resume <i class="fas fa-file-download"></i>
+                </a>
                 <a href="#contact" class="btn secondary-btn">Contact Me</a>
             </div>
+
             <div class="social-icons">
                 <a href="https://linkedin.com/in/saadansari" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/ansarisaad2454" target="_blank"><i class="fab fa-github"></i></a>
@@ -44,24 +51,37 @@
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    I am currently pursuing an MSc in Artificial Intelligence and Machine Learning at the Department of Computer Science, Gujarat University. 
-                    I have a strong foundation in building AI models and hands-on experience in Full Stack development.
-                </p>
-                <p>
-                    My passion lies in the practical application of Machine Learning, and I actively refine my skills through diverse, project-based learning in domains like NLP, Deep Learning, and Computer Vision.
-                </p>
-                
-                <div class="education-timeline">
-                    <h3>Education</h3>
-                    <div class="edu-item">
-                        <h4>MSc - Artificial Intelligence & Machine Learning</h4>
-                        <span>Gujarat University | 2024 – 2026</span>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        [cite_start]I am an <strong>AI/ML Master's student</strong> at Gujarat University[cite: 6]. 
+                        [cite_start]My focus is on creating scalable AI models, particularly in the fields of <strong>Natural Language Processing (NLP)</strong> and analytics[cite: 10].
+                    </p>
+                    <p>
+                        [cite_start]I actively seek to refine my skills through diverse, project-based learning[cite: 8]. From designing databases in Firebase to deploying RAG systems, I handle the end-to-end development lifecycle.
+                    </p>
+                    
+                    <div class="interests-container">
+                        <h3>Beyond Code</h3>
+                        <div class="tags">
+                            [cite_start]<span><i class="fas fa-chess-knight"></i> Chess Strategy [cite: 55]</span>
+                            [cite_start]<span><i class="fas fa-swimmer"></i> Swimming [cite: 54]</span>
+                            [cite_start]<span><i class="fas fa-book-open"></i> History Enthusiast [cite: 57]</span>
+                        </div>
                     </div>
-                    <div class="edu-item">
-                        <h4>BSc (IT) – Software Development</h4>
-                        <span>Gujarat University | 2021 – 2024</span>
+                </div>
+
+                <div class="education-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="timeline-item">
+                        <span class="year">2024 - 2026</span>
+                        <h4>MSc - Artificial Intelligence & ML</h4>
+                        [cite_start]<p>Gujarat University, Ahmedabad [cite: 14]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2021 - 2024</span>
+                        <h4>BSc (IT) - Software Development</h4>
+                        [cite_start]<p>Gujarat University, Ahmedabad [cite: 16]</p>
                     </div>
                 </div>
             </div>
@@ -70,22 +90,22 @@
 
     <section id="skills" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">Technical Arsenal</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI & ML</h3>
-                    <p>NLP, Deep Learning, RL, Scikit-learn, Pandas, NumPy, OpenCV</p>
+                    <div class="icon-box"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Data Science</h3>
+                    [cite_start]<p>NLP, Deep Learning, RAG Systems, XGBoost, Pandas, NumPy, OpenCV [cite: 10, 20]</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Languages</h3>
-                    <p>Python, Java, C++, C#, PHP, React-Native</p>
+                    <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Development</h3>
+                    [cite_start]<p>Python, Java, React-Native, FastAPI, HTML/Tailwind, Android Studio [cite: 12, 20]</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Tools & Tech</h3>
-                    <p>Firebase, Git/GitHub, VS Code, MySQL, Android Studio</p>
+                    <div class="icon-box"><i class="fas fa-database"></i></div>
+                    <h3>Tools & Cloud</h3>
+                    [cite_start]<p>Firebase, Google Gemini API, Git/GitHub, MySQL, VS Code [cite: 11, 20]</p>
                 </div>
             </div>
         </div>
@@ -93,61 +113,148 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Latest Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 
                 <div class="project-card">
-                    <div class="project-info">
-                        <h3>CricPredict (IPL Analytics)</h3>
-                        <span class="tech-stack">Python, XGBoost, NLP, Gemini API</span>
-                        <p>Full-stack web app for real-time IPL analysis. Implemented a RAG system using Google Gemini and FAISS to query 15+ years of cricket stats via a chatbot.</p>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>CricPredict</h3>
+                        </div>
+                        [cite_start]<p class="project-desc">A full-stack IPL analytics platform featuring a conversational chatbot[cite: 19].</p>
+                        <ul class="project-details">
+                            [cite_start]<li><strong>Tech:</strong> Python, FastAPI, XGBoost, Gemini API [cite: 20]</li>
+                            [cite_start]<li>Implemented <strong>RAG System</strong> with FAISS[cite: 22].</li>
+                            [cite_start]<li>Win probability regression models[cite: 21].</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Ansarisaad2454/CricPredict" target="_blank" class="btn-code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-info">
-                        <h3>Pluto (Student Chatbot)</h3>
-                        <span class="tech-stack">Python, Kivy, Custom NLP</span>
-                        <p>Smart AI chatbot for academic queries. Built custom NLP features like fuzzy matching, spell correction, and intent detection with state management.</p>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Raahi Dost</h3>
+                        </div>
+                        [cite_start]<p class="project-desc">Travel recommendation app based on budget and geolocation[cite: 25].</p>
+                        <ul class="project-details">
+                            [cite_start]<li><strong>Tech:</strong> React Native, Pandas, Firebase [cite: 24]</li>
+                            [cite_start]<li>Implemented <strong>Haversine formula</strong> for cost estimation[cite: 26].</li>
+                            [cite_start]<li>Secure user authentication[cite: 26].</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Ansarisaad2454/RaahiDost" target="_blank" class="btn-code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-info">
-                        <h3>Raahi Dost (Travel App)</h3>
-                        <span class="tech-stack">React Native, Pandas, Firebase</span>
-                        <p>Travel recommendation system suggesting destinations based on budget and preferences. Used Haversine formula for distance-based cost estimation.</p>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-comments"></i>
+                            <h3>Talk More</h3>
+                        </div>
+                        [cite_start]<p class="project-desc">Real-time messaging android application[cite: 34].</p>
+                        <ul class="project-details">
+                            [cite_start]<li><strong>Tech:</strong> Java, XML, Firebase Database [cite: 33]</li>
+                            [cite_start]<li>Instant data syncing via Realtime Database[cite: 35].</li>
+                            [cite_start]<li>Secure login and registration flows[cite: 35].</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Ansarisaad2454/TalkMore" target="_blank" class="btn-code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-info">
-                        <h3>Talk More</h3>
-                        <span class="tech-stack">Java, Android Studio, Firebase</span>
-                        <p>Real-time messaging app with secure login and instant message exchange using Firebase Realtime Database.</p>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>VidZen</h3>
+                        </div>
+                        [cite_start]<p class="project-desc">Android app for discovering and sharing short videos[cite: 38].</p>
+                        <ul class="project-details">
+                            [cite_start]<li><strong>Tech:</strong> Java, XML, Android Studio [cite: 37]</li>
+                            [cite_start]<li>Real-time data handling using Firebase[cite: 38].</li>
+                            [cite_start]<li>Focused on responsive UI/UX[cite: 39].</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Ansarisaad2454/VidZen" target="_blank" class="btn-code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
 
             </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://github.com/ansarisaad2454?tab=repositories" target="_blank" class="btn secondary-btn">
+                    View All Projects on GitHub <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-light">
+    <section id="certifications" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>I am open to opportunities in AI/ML and Software Development.</p>
-                <a href="mailto:saadansari2404@gmail.com" class="btn primary-btn">Say Hello</a>
-                <div class="contact-details">
-                    <p><i class="fas fa-phone"></i> +91-7600380700</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat, India</p>
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <i class="fab fa-google"></i>
+                    <div>
+                        <h4>Google Cloud</h4>
+                        [cite_start]<p>Introduction to Generative AI [cite: 45]</p>
+                    </div>
                 </div>
+                <div class="cert-item">
+                    <i class="fab fa-ibm"></i>
+                    <div>
+                        <h4>IBM</h4>
+                        [cite_start]<p>Introduction to Artificial Intelligence [cite: 46]</p>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-microphone-alt"></i>
+                    <div>
+                        <h4>Blossom Institute</h4>
+                        [cite_start]<p>Communication Skill Training [cite: 47]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container contact-wrapper">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>I am currently available for internships and full-time roles in AI/ML.</p>
+            <a href="mailto:saadansari2404@gmail.com" class="email-link">saadansari2404@gmail.com</a>
+            
+            <div class="contact-info">
+                <span><i class="fas fa-phone-alt"></i> +91-7600380700</span>
+                <span><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat</span>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/saadansari" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ansarisaad2454" target="_blank">GitHub</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Saad Ansari. Built with code.</p>
+        <p>&copy; 2026 Saad Ansari. Built with Code.</p>
     </footer>
 
     <script src="script.js"></script>
