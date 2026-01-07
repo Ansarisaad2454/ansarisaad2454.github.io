@@ -3,149 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Saad Ansari - AI/ML Student">
+    <meta name="description" content="Portfolio of Saad Ansari - AI/ML Student & Full Stack Developer">
     <title>Saad Ansari | AI & ML Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- CSS STYLES START HERE --- */
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
-
-        :root {
-            /* Cyberpunk Clean Theme */
-            --primary: #00f260; 
-            --secondary: #0575e6;
-            --dark-bg: #0a0a0a;
-            --card-bg: #111111;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --gradient: linear-gradient(135deg, #00f260 0%, #0575e6 100%);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
-
-        body { background-color: var(--dark-bg); color: var(--text-main); line-height: 1.6; }
-
-        /* Navigation */
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 5%; background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: -1px; color: white; }
-        .dot { color: var(--primary); }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        /* Mobile Menu */
-        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; color: white; }
-
-        /* Hero Section */
-        .hero {
-            min-height: 90vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 0 1rem;
-            background: radial-gradient(circle at 50% 10%, rgba(5, 117, 230, 0.15), transparent 50%);
-        }
-        .hero-content { max-width: 800px; animation: fadeIn 1s ease-out; }
-        .greeting { color: var(--primary); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px; }
-        .hero h1 { font-size: 4rem; margin: 10px 0; line-height: 1.1; }
-        .hero h2 { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 2rem; font-weight: 400; }
-        .hero p { margin: 0 auto 2.5rem; color: var(--text-muted); max-width: 600px; }
-
-        /* Buttons */
-        .hero-btns { margin-bottom: 30px; }
-        .btn {
-            padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 600;
-            margin: 10px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
-        }
-        .primary-btn { background: var(--gradient); color: #000; border: none; }
-        .secondary-btn { border: 1px solid rgba(255,255,255,0.2); color: white; background: rgba(255,255,255,0.05); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 242, 96, 0.2); }
-
-        /* Social Icons */
-        .social-icons a { font-size: 1.5rem; color: var(--text-muted); margin: 0 15px; transition: 0.3s; display: inline-block; }
-        .social-icons a:hover { color: var(--primary); transform: scale(1.1); }
-
-        /* General Section Styles */
-        .section { padding: 5rem 5%; }
-        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 4rem; position: relative; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gradient); margin: 15px auto; }
-        .bg-light { background: #0f0f0f; }
-
-        /* About Section */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-        .tags span {
-            display: inline-block; background: rgba(255,255,255,0.05); padding: 8px 15px;
-            border-radius: 20px; font-size: 0.9rem; margin-right: 8px; margin-bottom: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .education-card { background: var(--card-bg); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
-        .timeline-item { border-left: 2px solid var(--secondary); padding-left: 20px; margin-bottom: 25px; position: relative; }
-        .timeline-item::before { content: ''; width: 10px; height: 10px; background: var(--primary); border-radius: 50%; position: absolute; left: -6px; top: 5px; }
-        .year { font-size: 0.8rem; color: var(--primary); display: block; margin-bottom: 5px; }
-
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .skill-card {
-            background: var(--card-bg); padding: 2rem; border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.05); text-align: center; transition: 0.3s;
-        }
-        .skill-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .icon-box { font-size: 2.5rem; margin-bottom: 1.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        /* Projects Grid */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .project-card {
-            background: var(--card-bg); border-radius: 15px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; height: 100%; display: flex; flex-direction: column;
-        }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .card-header {
-            background: rgba(255,255,255,0.03); padding: 1.5rem;
-            display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .card-header i { color: var(--primary); font-size: 1.5rem; }
-        .card-body { padding: 1.5rem; flex-grow: 1; }
-        .project-desc { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem; }
-        .project-details { list-style: none; padding: 0; }
-        .project-details li {
-            font-size: 0.9rem; margin-bottom: 8px; position: relative; padding-left: 20px; color: #d0d0d0;
-        }
-        .project-details li::before { content: '▹'; position: absolute; left: 0; color: var(--secondary); }
-
-        /* Certifications */
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .cert-item {
-            display: flex; align-items: center; gap: 1rem; background: var(--card-bg);
-            padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);
-        }
-        .cert-item i { font-size: 2rem; color: var(--text-muted); }
-
-        /* Contact & Footer */
-        .contact-wrapper { text-align: center; }
-        .email-link { font-size: 1.5rem; color: var(--primary); text-decoration: none; font-weight: 700; margin: 2rem 0; display: block; }
-        .contact-info span { margin: 0 15px; color: var(--text-muted); display: inline-block; }
-        footer { text-align: center; padding: 2rem; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); }
-
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar { padding: 1rem; }
-            .nav-links { 
-                display: none; position: absolute; top: 100%; left: 0; width: 100%; 
-                background: var(--card-bg); flex-direction: column; padding: 2rem; text-align: center; 
-            }
-            .nav-links.active { display: flex; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2.5rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .contact-info span { display: block; margin: 10px 0; }
-        }
-    </style>
 </head>
 <body>
 
@@ -158,7 +19,7 @@
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
@@ -168,7 +29,7 @@
             <span class="greeting">Hello, I'm</span>
             <h1>Saad Ansari</h1>
             <h2>MSc Artificial Intelligence & Machine Learning</h2>
-            [cite_start]<p>Building intelligent systems with <strong>NLP</strong>, <strong>Deep Learning</strong>, and <strong>Generative AI</strong>[cite: 6, 7]. [cite_start]Passionate about solving real-world problems through code[cite: 8].</p>
+            <p>Building intelligent systems with <strong>NLP</strong>, <strong>Deep Learning</strong>, and <strong>Generative AI</strong>. Passionate about solving real-world problems through code.</p>
             
             <div class="hero-btns">
                 <a href="resume.pdf" download class="btn primary-btn">
@@ -191,19 +52,19 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        [cite_start]I am an <strong>AI/ML Master's student</strong> at Gujarat University with a background in Software Development[cite: 6, 16]. 
-                        [cite_start]My focus is on creating scalable AI models, particularly in the fields of <strong>Natural Language Processing (NLP)</strong> and analytics[cite: 10].
+                        I am an <strong>AI/ML Master's student</strong> at Gujarat University with a background in Software Development. 
+                        My focus is on creating scalable AI models, particularly in the fields of <strong>Natural Language Processing (NLP)</strong> and analytics.
                     </p>
                     <p>
-                        I don't just build models; I build full-stack applications. [cite_start]From designing databases in Firebase to deploying RAG systems with Gemini API, I handle the end-to-end development lifecycle[cite: 20, 35].
+                        I don't just build models; I build full-stack applications. From designing databases in Firebase to deploying RAG systems with Gemini API, I handle the end-to-end development lifecycle.
                     </p>
                     
                     <div class="interests-container">
                         <h3>Beyond Code</h3>
                         <div class="tags">
-                            [cite_start]<span><i class="fas fa-chess-knight"></i> Chess Strategy [cite: 55]</span>
-                            [cite_start]<span><i class="fas fa-swimmer"></i> Swimming [cite: 54]</span>
-                            [cite_start]<span><i class="fas fa-book-open"></i> History Enthusiast [cite: 57]</span>
+                            <span><i class="fas fa-chess-knight"></i> Chess Strategy</span>
+                            <span><i class="fas fa-swimmer"></i> Swimming</span>
+                            <span><i class="fas fa-book-open"></i> History Enthusiast</span>
                         </div>
                     </div>
                 </div>
@@ -213,12 +74,12 @@
                     <div class="timeline-item">
                         <span class="year">2024 - 2026</span>
                         <h4>MSc - Artificial Intelligence & ML</h4>
-                        [cite_start]<p>Gujarat University, Ahmedabad [cite: 14, 15]</p>
+                        <p>Gujarat University, Ahmedabad</p>
                     </div>
                     <div class="timeline-item">
                         <span class="year">2021 - 2024</span>
                         <h4>BSc (IT) - Software Development</h4>
-                        [cite_start]<p>Gujarat University, Ahmedabad [cite: 16, 17]</p>
+                        <p>Gujarat University, Ahmedabad</p>
                     </div>
                 </div>
             </div>
@@ -232,17 +93,17 @@
                 <div class="skill-card">
                     <div class="icon-box"><i class="fas fa-brain"></i></div>
                     <h3>AI & Data Science</h3>
-                    [cite_start]<p>NLP, Deep Learning, RAG Systems, XGBoost, Pandas, NumPy, OpenCV, Scikit-learn [cite: 10, 20]</p>
+                    <p>NLP, Deep Learning, RAG Systems, XGBoost, Pandas, NumPy, OpenCV, Scikit-learn</p>
                 </div>
                 <div class="skill-card">
                     <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
                     <h3>Development</h3>
-                    [cite_start]<p>Python, Java, React-Native, FastAPI, HTML/Tailwind, Android Studio [cite: 12, 20, 24]</p>
+                    <p>Python, Java, React-Native, FastAPI, HTML/Tailwind, Android Studio</p>
                 </div>
                 <div class="skill-card">
                     <div class="icon-box"><i class="fas fa-database"></i></div>
                     <h3>Tools & Cloud</h3>
-                    [cite_start]<p>Firebase, Google Gemini API, Git/GitHub, MySQL, VS Code [cite: 11, 20]</p>
+                    <p>Firebase, Google Gemini API, Git/GitHub, MySQL, VS Code</p>
                 </div>
             </div>
         </div>
@@ -259,11 +120,11 @@
                         <h3>CricPredict</h3>
                     </div>
                     <div class="card-body">
-                        [cite_start]<p class="project-desc">A full-stack IPL analytics platform featuring a conversational chatbot[cite: 19, 21].</p>
+                        <p class="project-desc">A full-stack IPL analytics platform featuring a conversational chatbot.</p>
                         <ul class="project-details">
-                            [cite_start]<li><strong>Tech:</strong> Python, FastAPI, XGBoost, Gemini API [cite: 20]</li>
-                            [cite_start]<li>Implemented <strong>RAG System</strong> with FAISS to query 15+ years of stats[cite: 22].</li>
-                            [cite_start]<li>Used XGBoost for win probability regression models[cite: 21].</li>
+                            <li><strong>Tech:</strong> Python, FastAPI, XGBoost, Gemini API</li>
+                            <li>Implemented <strong>RAG System</strong> with FAISS to query 15+ years of stats.</li>
+                            <li>Used XGBoost for win probability regression models.</li>
                         </ul>
                     </div>
                 </div>
@@ -274,11 +135,11 @@
                         <h3>Pluto Chatbot</h3>
                     </div>
                     <div class="card-body">
-                        [cite_start]<p class="project-desc">A smart AI assistant helping students with academic queries[cite: 27, 29].</p>
+                        <p class="project-desc">A smart AI assistant helping students with academic queries.</p>
                         <ul class="project-details">
-                            [cite_start]<li><strong>Tech:</strong> Python, Kivy, Firebase, Custom NLP [cite: 28]</li>
-                            [cite_start]<li>Built custom <strong>Intent Detection</strong> and spell correction algorithms[cite: 30].</li>
-                            [cite_start]<li>Managed multi-step conversations with state management[cite: 31].</li>
+                            <li><strong>Tech:</strong> Python, Kivy, Firebase, Custom NLP</li>
+                            <li>Built custom <strong>Intent Detection</strong> and spell correction algorithms.</li>
+                            <li>Managed multi-step conversations with state management.</li>
                         </ul>
                     </div>
                 </div>
@@ -289,11 +150,11 @@
                         <h3>Raahi Dost</h3>
                     </div>
                     <div class="card-body">
-                        [cite_start]<p class="project-desc">Travel recommendation app based on budget and geolocation[cite: 23, 25].</p>
+                        <p class="project-desc">Travel recommendation app based on budget and geolocation.</p>
                         <ul class="project-details">
-                            [cite_start]<li><strong>Tech:</strong> React Native, Pandas, Firebase Auth [cite: 24]</li>
-                            [cite_start]<li>Implemented <strong>Haversine formula</strong> for distance/cost estimation[cite: 26].</li>
-                            [cite_start]<li>Secure user authentication via Firebase[cite: 26].</li>
+                            <li><strong>Tech:</strong> React Native, Pandas, Firebase Auth</li>
+                            <li>Implemented <strong>Haversine formula</strong> for distance/cost estimation.</li>
+                            <li>Secure user authentication via Firebase.</li>
                         </ul>
                     </div>
                 </div>
@@ -304,11 +165,11 @@
                         <h3>Talk More</h3>
                     </div>
                     <div class="card-body">
-                        [cite_start]<p class="project-desc">Real-time messaging android application[cite: 32, 34].</p>
+                        <p class="project-desc">Real-time messaging android application.</p>
                         <ul class="project-details">
-                            [cite_start]<li><strong>Tech:</strong> Java, XML, Firebase Database [cite: 33]</li>
-                            [cite_start]<li>Instant data syncing using Firebase Realtime Database[cite: 35].</li>
-                            [cite_start]<li>Secure login and registration flows[cite: 35].</li>
+                            <li><strong>Tech:</strong> Java, XML, Firebase Database</li>
+                            <li>Instant data syncing using Firebase Realtime Database.</li>
+                            <li>Secure login and registration flows.</li>
                         </ul>
                     </div>
                 </div>
@@ -325,21 +186,21 @@
                     <i class="fab fa-google"></i>
                     <div>
                         <h4>Google Cloud</h4>
-                        [cite_start]<p>Introduction to Generative AI [cite: 45]</p>
+                        <p>Introduction to Generative AI</p>
                     </div>
                 </div>
                 <div class="cert-item">
                     <i class="fab fa-ibm"></i>
                     <div>
                         <h4>IBM</h4>
-                        [cite_start]<p>Introduction to Artificial Intelligence [cite: 46]</p>
+                        <p>Introduction to Artificial Intelligence</p>
                     </div>
                 </div>
                 <div class="cert-item">
                     <i class="fas fa-microphone-alt"></i>
                     <div>
                         <h4>Blossom Institute</h4>
-                        [cite_start]<p>Communication Skill Training [cite: 47]</p>
+                        <p>Communication Skill Training</p>
                     </div>
                 </div>
             </div>
@@ -350,16 +211,16 @@
         <div class="container contact-wrapper">
             <h2 class="section-title">Let's Connect</h2>
             <p>I am currently available for internships and full-time roles in AI/ML.</p>
-            [cite_start]<a href="mailto:saadansari2404@gmail.com" class="email-link">saadansari2404@gmail.com [cite: 2]</a>
+            <a href="mailto:saadansari2404@gmail.com" class="email-link">saadansari2404@gmail.com</a>
             
             <div class="contact-info">
-                [cite_start]<span><i class="fas fa-phone-alt"></i> +91-7600380700 [cite: 3]</span>
-                [cite_start]<span><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat [cite: 14]</span>
+                <span><i class="fas fa-phone-alt"></i> +91-7600380700</span>
+                <span><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat</span>
             </div>
             
             <div class="footer-socials">
-                [cite_start]<a href="https://linkedin.com/in/saadansari" target="_blank">LinkedIn [cite: 4]</a>
-                [cite_start]<a href="https://github.com/ansarisaad2454" target="_blank">GitHub [cite: 4]</a>
+                <a href="https://linkedin.com/in/saadansari" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ansarisaad2454" target="_blank">GitHub</a>
             </div>
         </div>
     </section>
@@ -368,21 +229,6 @@
         <p>&copy; 2026 Saad Ansari. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // Simple Reveal Animation on Scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        });
-
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
