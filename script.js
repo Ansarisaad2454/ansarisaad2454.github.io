@@ -1,36 +1,68 @@
-// Mobile Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+/* ─── Theme Toggle ─────────────────────────── */
+const html = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+
+// Load saved preference, default to dark
+const savedTheme = localStorage.getItem('sa-theme') || 'dark';
+html.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('sa-theme', next);
+});
+
+/* ─── Mobile Menu ───────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
     navLinks.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
 });
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
         navLinks.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
-// Scroll Reveal Animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+/* ─── Navbar shrink on scroll ───────────────── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+/* ─── Scroll Reveal ─────────────────────────── */
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    if (!el.closest('.hero')) revealObserver.observe(el);
 });
 
-// Select elements to animate
-const hiddenElements = document.querySelectorAll('.project-card, .skill-card, .cert-item, .about-text, .education-card');
+/* ─── Active nav link on scroll ─────────────── */
+const sections     = document.querySelectorAll('section[id]');
+const navLinkItems = document.querySelectorAll('.nav-link');
 
-// Set initial state for JS animation
-hiddenElements.forEach((el) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.8s ease-out';
-    observer.observe(el);
-});
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinkItems.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+        }
+    });
+}, { threshold: 0.4 });
+
+sections.forEach(s => sectionObserver.observe(s));
