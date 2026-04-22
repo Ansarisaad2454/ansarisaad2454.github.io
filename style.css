@@ -575,6 +575,47 @@ body {
     color: var(--green); font-size: 0.72rem; top: 2px;
 }
 
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-btn {
+    text-decoration: none;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all var(--dur) var(--ease);
+}
+
+.project-btn:hover {
+    color: var(--text);
+    border-color: var(--border-hover);
+}
+
+.project-btn-live {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0f9d58 0%, #1a73e8 100%);
+    border-color: transparent;
+}
+
+.project-btn-live:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(26, 115, 232, 0.2);
+}
+
 .project-tech {
     display: flex; flex-wrap: wrap; gap: 0.4rem;
     position: relative; z-index: 1; margin-top: auto;
@@ -584,6 +625,57 @@ body {
     border: 1px solid rgba(61,126,255,0.18);
     padding: 0.26rem 0.72rem; border-radius: 50px;
     font-size: 0.76rem; font-weight: 500;
+}
+
+.resume-links {
+    margin-top: 2.75rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 2px 14px var(--shadow);
+}
+
+.resume-links h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+}
+
+.resume-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.resume-link-item {
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    padding: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    transition: all var(--dur) var(--ease);
+}
+
+.resume-link-item:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
+
+.resume-link-title {
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.resume-link-url {
+    color: var(--text-muted);
+    font-size: 0.74rem;
+    overflow-wrap: anywhere;
 }
 
 .projects-cta { text-align: center; margin-top: 3.5rem; }
@@ -708,6 +800,7 @@ footer strong { color: var(--text-muted); }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .skills-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
+    .resume-links-grid { grid-template-columns: 1fr; }
     .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
     .timeline-item { grid-template-columns: 80px 1fr; gap: 1rem; }
 }
